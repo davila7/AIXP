@@ -13,7 +13,12 @@ AIXP is built upon the following key principles:
 
 To achieve these goals, AIXP incorporates the following groups and components:
 
-<img width="956" alt="AIXP Groups" src="https://user-images.githubusercontent.com/6216945/236652965-346b77be-57b0-4a81-94c4-1d865d74f7da.png">
+| Group | Description | Points |
+|----------|----------|----------|
+| Communication    | This group vocers the aspects related to data exchange and access control   | Access Points, Data Formats, Authentication and Ahthorization, Versioning   |
+| Loop Prevention    | This group focuses on detectiong and preventing loops in the system   | Loop Detection and Prevention   |
+| Task Finalization    | This group deals with the process of verifying task completion and terminating loops   | Status Codes and Error Messages, Task Completion, Verification and Loop Termination   |
+
 
 ## Communication
 1. Access Points
