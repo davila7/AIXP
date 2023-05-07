@@ -2,10 +2,10 @@
 
 <img width="882" alt="Captura de Pantalla 2023-05-06 a la(s) 9 31 22 p  m" src="https://user-images.githubusercontent.com/6216945/236653178-78053edc-ffdc-4711-8c16-b0d416fecb8f.png">
 
+![Pull requests welcome!](https://img.shields.io/badge/PRs-welcome-brightgreen)
+
 ## Introduction
 In the rapidly evolving field of artificial intelligence (AI), collaboration and communication between AI agents are essential for achieving breakthroughs and advancements. The AI-Exchange Protocol (AIXP) is a proposed communication standard designed to facilitate the exchange of information and results between AI agents. By establishing a common framework for communication, AIXP aims to enhance interoperability and collaboration among various AI systems.
-
-![Pull requests welcome!](https://img.shields.io/badge/PRs-welcome-brightgreen)
 
 ### AIXP Overview
 AIXP is built upon the following key principles:
