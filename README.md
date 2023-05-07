@@ -10,7 +10,8 @@ AIXP is built upon the following key principles:
 2. Establish a common standard for communication between different AI systems.
 
 To achieve these goals, AIXP incorporates the following groups and components:
-<img width="956" alt="Captura de Pantalla 2023-05-06 a la(s) 9 21 45 p  m" src="https://user-images.githubusercontent.com/6216945/236652965-346b77be-57b0-4a81-94c4-1d865d74f7da.png">
+
+<img width="956" alt="AIXP Groups" src="https://user-images.githubusercontent.com/6216945/236652965-346b77be-57b0-4a81-94c4-1d865d74f7da.png">
 
 ## Communication
 1. Access Points
@@ -20,7 +21,8 @@ AIXP defines specific access points for each function or task that AI agents can
 AIXP establishes a common data format for information exchange, such as JSON or XML. This ensures that all AI agents can interpret and process the received data, regardless of their underlying technologies or platforms.
 
 Here is an example of code using the JSON format to exchange data between two artificial intelligence agents in English:
-<img width="811" alt="Captura de Pantalla 2023-05-06 a la(s) 9 22 20 p  m" src="https://user-images.githubusercontent.com/6216945/236652983-0fc683ab-1a02-4771-8988-b0f042a74387.png">
+
+<img width="811" alt="AIXP Json example" src="https://user-images.githubusercontent.com/6216945/236652983-0fc683ab-1a02-4771-8988-b0f042a74387.png">
 
 In this example, Agent A requests Agent B to perform text analysis. The request and response are structured using the JSON format, which allows both agents to easily interpret and process the exchanged data.
 
@@ -35,7 +37,8 @@ AIXP includes versioning information in protocol requests and responses to ensur
 To handle the potential issue of infinite communication loops between AI agents, AIXP includes a mechanism for loop detection and prevention. This component ensures that AI agents do not get stuck in a cycle of continuous communication without making progress on their tasks.
 
 Example: BabyAGI infinite loop
-<img width="909" alt="Captura de Pantalla 2023-05-06 a la(s) 9 22 50 p  m" src="https://user-images.githubusercontent.com/6216945/236652996-9284fcbd-180b-483d-b332-f7db6a6547b8.png">
+
+<img width="909" alt="BABYAGI" src="https://user-images.githubusercontent.com/6216945/236652996-9284fcbd-180b-483d-b332-f7db6a6547b8.png">
 
 Loop detection and prevention can be achieved through the following methods:
 
@@ -47,7 +50,8 @@ Loop detection and prevention can be achieved through the following methods:
 AIXP establishes a set of standardized status codes and error messages to inform AI agents about potential issues during information exchange. This enables AI agents to handle errors gracefully and maintain robust communication.
 
 Status code from 5001 to 5009
-<img width="857" alt="Captura de Pantalla 2023-05-06 a la(s) 9 23 08 p  m" src="https://user-images.githubusercontent.com/6216945/236653007-08359d11-26f2-4ea1-915f-8f9e6a0e752c.png">
+
+<img width="857" alt="Status code" src="https://user-images.githubusercontent.com/6216945/236653007-08359d11-26f2-4ea1-915f-8f9e6a0e752c.png">
 
 7. Task Completion Verification and Loop Termination
 To ensure that tasks performed by AI agents are completed successfully and to finalize the communication loop, AIXP incorporates a task completion verification protocol. This protocol reviews the results of the tasks and determines whether the loop can be terminated.
@@ -62,8 +66,8 @@ By implementing the task completion verification protocol, AIXP ensures that AI 
 
 ### Example Use Case
 Imagine two AI agents, Agent A, and Agent B, that need to collaborate on a project. Agent A specializes in natural language processing, while Agent B excels in image recognition. Using AIXP, Agent A can send a text analysis request to Agent B’s designated endpoint, along with the necessary authentication credentials. Agent B can then process the request, perform the required analysis, and return the results to Agent A in a standardized format. Throughout this process, AIXP ensures secure, efficient, and seamless communication between the two AI agents.
-<img width="806" alt="Captura de Pantalla 2023-05-06 a la(s) 9 23 27 p  m" src="https://user-images.githubusercontent.com/6216945/236653014-91fbeaa6-744d-4617-89cf-dd5357d03a32.png">
 
+<img width="806" alt="AIXP Example" src="https://user-images.githubusercontent.com/6216945/236653014-91fbeaa6-744d-4617-89cf-dd5357d03a32.png">
 
 ## Conclusion
 The AI-Exchange Protocol (AIXP) is a promising communication standard for artificial intelligence agents, designed to foster collaboration and information exchange. By providing a common framework for communication, AIXP can help drive innovation and progress in the field of AI. As AI systems continue to evolve and become more sophisticated, the adoption of standards like AIXP will be crucial for enabling effective communication and collaboration among AI agents.
