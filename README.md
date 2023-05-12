@@ -115,7 +115,17 @@ AIXP establishes a set of standardized status codes and error messages to inform
 
 Status code from 5001 to 5009
 
-<img width="857" alt="Status code" src="https://user-images.githubusercontent.com/6216945/236653007-08359d11-26f2-4ea1-915f-8f9e6a0e752c.png">
+| Status code | Description                                                                            |
+|-------------|----------------------------------------------------------------------------------------|
+| 5001        | Success Agent connected                                                                |
+| 5002        | Success Data received and processed                                                    |
+| 5003        | Agent disconnected                                                                     |
+| 5004        | Agent identification issue (not found or invalid credentials)                          |
+| 5005        | Agent communication issue (timeout or rate limit exceeded)                             |
+| 5006        | Data format and compatibility issue (unsupported format or incompatible version)       |
+| 5007        | Access and privilege issue (insufficient access or maximum agents reached)             |
+| 5008        | Connection limit issue (agent connection limit exceeded)                               |
+| 5009        | Unexpected agent disconnection                                                         |
 
 7. Task Completion Verification and Loop Termination
 To ensure that tasks performed by AI agents are completed successfully and to finalize the communication loop, AIXP incorporates a task completion verification protocol. This protocol reviews the results of the tasks and determines whether the loop can be terminated.
@@ -129,9 +139,54 @@ The task completion verification protocol consists of the following steps:
 By implementing the task completion verification protocol, AIXP ensures that AI agents can effectively collaborate and complete tasks while avoiding infinite communication loops. This contributes to the overall efficiency and reliability of the AI systems involved in the collaboration.
 
 ### Example Use Case
-Imagine two AI agents, Agent A, and Agent B, that need to collaborate on a project. Agent A specializes in natural language processing, while Agent B excels in image recognition. Using AIXP, Agent A can send a text analysis request to Agent B’s designated endpoint, along with the necessary authentication credentials. Agent B can then process the request, perform the required analysis, and return the results to Agent A in a standardized format. Throughout this process, AIXP ensures secure, efficient, and seamless communication between the two AI agents.
+Consider two AI entities, Agent A and Agent B, collaborating on a project. Agent A is proficient in Optical Character Recognition (OCR), while Agent B specializes in Natural Language Processing (NLP). Utilizing the Artificial Intelligence Exchange Protocol (AIXP), Agent A receives an OCR request and carries out the essential authorization. Following the OCR operation, Agent A shares the text with Agent B, who then processes the request and performs the requisite NLP analysis. The exchange concludes with Agent B returning the results to Agent A in a standardized format. Throughout this entire operation, AIXP guarantees secure, efficient, and seamless communication between the two AI agents.
 
-<img width="806" alt="AIXP Example" src="https://user-images.githubusercontent.com/6216945/236653014-91fbeaa6-744d-4617-89cf-dd5357d03a32.png">
+To conclude, both agents enrich the reports: RRG: Result Report Generation, RRA: Result Report Assessment, RRR: Result Report Resolution.
+
+```mermaid
+---
+title: AIXP Example
+---
+stateDiagram-v2
+state "Text analysis request sending image" as Start
+%% Agent A
+state "Authenticate" as agentATask1
+state "OCR process" as agentATask2
+state "Format data" as agentATask3
+%% Agent B
+state "Receive data" as agentBTask1
+state "Process text (NLP)" as agentBTask2
+state "Respond with text" as agentBTask3
+%% Reports
+state "RRG: Result Report Generation" as reportDefinition1
+state "RRA: Result Report Assessment" as reportDefinition2
+state "RRR: Result Report Resolution" as reportDefinition3
+
+direction LR
+[*] --> Start
+Start --> AgentA
+state AgentA {
+    
+    [*] --> agentATask1
+    agentATask1 --> agentATask2
+    agentATask2 --> agentATask3
+}
+AgentA --> AgentB: Send OCR text
+state AgentB {
+    [*] --> agentBTask1
+    agentBTask1 --> agentBTask2
+    agentBTask2 --> agentBTask3
+}
+AgentB --> AgentA: Send NLP analysis
+AgentA --> Reports: Enrich report
+AgentB --> Reports: Enrich report
+state Reports {
+    direction LR
+    [*] --> reportDefinition1
+    [*] --> reportDefinition2
+    [*] --> reportDefinition3
+}
+```
 
 ## Conclusion
 The AI-Exchange Protocol (AIXP) is a promising communication standard for artificial intelligence agents, designed to foster collaboration and information exchange. By providing a common framework for communication, AIXP can help drive innovation and progress in the field of AI. As AI systems continue to evolve and become more sophisticated, the adoption of standards like AIXP will be crucial for enabling effective communication and collaboration among AI agents.
