@@ -33,7 +33,27 @@ AIXP establishes a common data format for information exchange, such as JSON or 
 
 Here is an example of code using the JSON format to exchange data between two artificial intelligence agents in English:
 
-<img width="811" alt="AIXP Json example" src="https://user-images.githubusercontent.com/6216945/236652983-0fc683ab-1a02-4771-8988-b0f042a74387.png">
+```json
+{
+  "request": {
+    "agent_id": "Agent_A",
+    "task": "text_analysis",
+    "data": {
+      "text": "The quick brown fox jumps over the lazy dog."
+    }
+  },
+  "response": {
+    "agent_id": "Agent_B",
+    "task": "text_analysis",
+    "status": "success",
+    "data": {
+      "word_count": 9,
+      "most_common_word": "the",
+      "sentiment": "neutral"
+    }
+  }
+}
+```
 
 In this example, Agent A requests Agent B to perform text analysis. The request and response are structured using the JSON format, which allows both agents to easily interpret and process the exchanged data.
 
@@ -47,9 +67,42 @@ AIXP includes versioning information in protocol requests and responses to ensur
 5. Loop Detection and Prevention
 To handle the potential issue of infinite communication loops between AI agents, AIXP includes a mechanism for loop detection and prevention. This component ensures that AI agents do not get stuck in a cycle of continuous communication without making progress on their tasks.
 
-Example: BabyAGI infinite loop
+Example of BabyAGI infinite loop
 
-<img width="909" alt="BABYAGI" src="https://user-images.githubusercontent.com/6216945/236652996-9284fcbd-180b-483d-b332-f7db6a6547b8.png">
+```mermaid
+sequenceDiagram
+    participant Execution Agent
+    participant Context Agent
+    participant Task Agent
+    participant Priotization Agent
+    participant Vector DB
+
+    autonumber
+    loop BabyAGI
+        %% Execution step
+        Execution Agent --> Execution Agent: Pull the first incomplete task
+        Execution Agent --> Execution Agent: Execute Task
+        Execution Agent --) Vector DB: Enrich vectors
+        Execution Agent ->> Context Agent: Exchange result
+        Context Agent ->> Execution Agent: Response code XXXX
+
+        %% Context step
+        Context Agent --) Vector DB: Retrieve vectors
+        Context Agent --> Context Agent: Process context
+        Context Agent --) Vector DB: Enrich vectors
+        Context Agent ->> Task Agent: Exchange context
+        Task Agent ->> Context Agent: Response code XXXX
+        %% Task step
+        Task Agent --> Task Agent: Create new tasks
+        Task Agent ->> Priotization Agent: Exchange new tasks
+        Priotization Agent ->> Task Agent: Response code XXXX
+        %% Priorization step
+        Priotization Agent --> Priotization Agent: Reprioritize tasks
+        %% Loop
+        Priotization Agent ->> Execution Agent: Transfer new task
+        Task Agent ->> Priotization Agent: Response code XXXX
+    end
+```
 
 Loop detection and prevention can be achieved through the following methods:
 
