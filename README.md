@@ -190,3 +190,56 @@ state Reports {
 
 ## Conclusion
 The AI-Exchange Protocol (AIXP) is a promising communication standard for artificial intelligence agents, designed to foster collaboration and information exchange. By providing a common framework for communication, AIXP can help drive innovation and progress in the field of AI. As AI systems continue to evolve and become more sophisticated, the adoption of standards like AIXP will be crucial for enabling effective communication and collaboration among AI agents.
+
+## What's Next & To Do
+
+We've received significant interest in the AIXP project, and with the development of Agents in [CodeGPT](https://codegpt.co), now is a great time to push forward!  Here's a glimpse of what's coming and what needs to be done:
+
+### What's Next
+
+* [x] **Basic Python Example:** Implement a simple example in Python demonstrating the core communication flow between two agents using AIXP. This will involve defining message structures and basic sending/receiving mechanisms. (See `aixp_example.py`)
+* [ ] **Testing the Python Example:** Add unit tests to ensure the basic communication example functions as expected.
+* [ ] **Initial Documentation for the Example:** Document the Python example, explaining its components and how to run it.
+
+### To Do
+
+Here are some of the key areas we plan to develop further:
+
+#### Core Communication
+
+* [ ] **Define Formal Message Schemas:**  Move beyond the basic example and create more robust and well-defined schemas for AIXP messages (e.g., using JSON Schema or Protocol Buffers).
+* [ ] **Implement Different Transport Mechanisms:** Explore and implement various ways for agents to communicate (e.g., HTTP, WebSockets, message queues).
+* [ ] **Standardize Access Points:** Define clear conventions for how agents expose their functionalities and how others can access them (e.g., using RESTful APIs or other service discovery mechanisms).
+* [ ] **Implement Content Negotiation:** Allow agents to specify the data formats they can handle.
+
+#### Security
+
+* [ ] **Implement Authentication:** Define methods for agents to verify their identity.
+* [ ] **Implement Authorization:** Define mechanisms to control which agents have access to specific resources or functionalities.
+* [ ] **Explore Encryption Options:** Investigate methods for securing communication between agents.
+
+#### Loop Prevention
+
+* [ ] **Implement Message Tracking:**  Develop a more robust system for tracking messages to detect potential loops.
+* [ ] **Implement Time-to-Live (TTL):** Add TTL functionality to messages.
+* [ ] **Define Loop Detection Strategies:**  Document and potentially implement more sophisticated strategies for detecting communication loops.
+
+#### Task Finalization
+
+* [ ] **Expand Status Codes and Error Messages:** Add more comprehensive status codes and error messages to cover various scenarios.
+* [ ] **Define a Task Completion Protocol:**  Formalize the process of verifying task completion and handling failures.
+
+#### Advanced Features
+
+* [ ] **Implement Service Discovery:** Explore ways for agents to automatically discover other agents and their capabilities.
+* [ ] **Define Negotiation Protocols:**  Potentially explore protocols for agents to negotiate parameters or capabilities before initiating tasks.
+* [ ] **Support for Streaming Data:** Consider how AIXP can handle the exchange of large or streaming datasets.
+
+#### Other
+
+* [ ] **Create SDKs/Libraries in Other Languages:**  Develop libraries for AIXP in other popular programming languages to facilitate broader adoption.
+* [ ] **Develop More Comprehensive Documentation:** Expand the documentation to cover all aspects of the protocol.
+* [ ] **Build Real-World Examples:** Create more complex examples showcasing the benefits of AIXP in practical scenarios.
+
+**Contributions are welcome!** If you're interested in helping shape the future of AI agent communication, please feel free to contribute to this repository. Check the "Issues" tab for potential tasks and open discussions.
+
